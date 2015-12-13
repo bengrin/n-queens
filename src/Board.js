@@ -158,8 +158,8 @@
     hasAnyMajorDiagonalConflicts: function() {
       var size = this.get('n');
 
-      for (var i = 0; i < size; i++) {
-        if (this.hasMajorDiagonalConflictAt(i)) {
+      for( var i = 1 - size; i < size; i++ ) {
+        if( this.hasMajorDiagonalConflictAt(i) ) {
           return true;
         }
       }
@@ -192,8 +192,8 @@
     hasAnyMinorDiagonalConflicts: function() {
       var size = this.get('n');
 
-      for (var i = 0; i < size; i++) {
-        if (this.hasMinorDiagonalConflictAt(i)) {
+      for( var i = (size * 2) - 1; i >= 0; i-- ) {
+        if( this.hasMinorDiagonalConflictAt(i) ) {
           return true;
         }
       }
